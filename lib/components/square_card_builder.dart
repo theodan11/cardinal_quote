@@ -1,4 +1,4 @@
-import 'package:cardinal_quotes/component/card_squ.dart';
+import 'package:cardinal_quotes/components/card_squ.dart';
 import 'package:cardinal_quotes/constants/category_card_model.dart';
 import 'package:flutter/material.dart';
 import 'package:cardinal_quotes/constants/category_card_data.dart';

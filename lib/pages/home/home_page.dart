@@ -1,5 +1,5 @@
-import 'package:cardinal_quotes/component/category_card_builder.dart';
-import 'package:cardinal_quotes/component/square_card_builder.dart';
+import 'package:cardinal_quotes/components/square_card_builder.dart';
+import 'package:cardinal_quotes/components/top_menu_category.dart';
 import 'package:cardinal_quotes/theme/custom_colors.dart';
 import 'package:flutter/material.dart';
 
@@ -16,22 +16,7 @@ class HomePage extends StatelessWidget {
               const SizedBox(
                 height: 70,
               ),
-              Padding(
-                padding: const EdgeInsets.only(left: 35),
-                child: Row(
-                  children: [
-                    Icon(
-                      Icons.menu,
-                      color: CustomColors.cardWhiteColor,
-                      size: 33,
-                    ),
-                    const SizedBox(
-                      width: 24,
-                    ),
-                    CategoryCardBuilder()
-                  ],
-                ),
-              ),
+              TopMenuCategory(),
               const SizedBox(
                 height: 30,
               ),

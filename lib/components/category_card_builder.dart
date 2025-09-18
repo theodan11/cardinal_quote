@@ -1,4 +1,4 @@
-import 'package:cardinal_quotes/component/category_card.dart';
+import 'package:cardinal_quotes/components/category_card.dart';
 import 'package:cardinal_quotes/constants/category_card_model.dart';
 import 'package:cardinal_quotes/constants/category_card_data.dart';
 import 'package:flutter/material.dart';

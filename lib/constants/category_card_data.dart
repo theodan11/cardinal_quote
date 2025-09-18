@@ -3,8 +3,8 @@ import 'package:cardinal_quotes/constants/category_card_model.dart';
 List<CategoryCardModel> categoryList = [
   CategoryCardModel(
       label: "popular",
-      iconPath: "/assets/icons/material-symbols_explore-outline.png"),
-  CategoryCardModel(label: "latest", iconPath: "/assets/icons/new.png"),
+      iconPath: "assets/icons/material-symbols_explore-outline.png"),
+  CategoryCardModel(label: "latest", iconPath: "assets/icons/new.png"),
   CategoryCardModel(
       label: "grief & loss", iconPath: "assets/icons/uil_sad.png"),
   CategoryCardModel(

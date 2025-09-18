@@ -1,5 +1,4 @@
-import 'package:cardinal_quotes/constants/category_card_data.dart';
-import 'package:cardinal_quotes/constants/category_card_model.dart';
+import 'package:cardinal_quotes/component/category_card_builder.dart';
 import 'package:cardinal_quotes/theme/custom_colors.dart';
 import 'package:flutter/material.dart';
 
@@ -9,15 +8,30 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: CustomColors.primaryBgColor,
-      body: Center(
-        child: ListView.builder(
-            itemCount: categoryList.length,
-            itemBuilder: (context, index) {
-              CategoryCardModel categoryItem = categoryList[index];
-              return Text(categoryItem.label);
-            }),
-      ),
-    );
+        backgroundColor: CustomColors.primaryBgColor,
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.only(left: 35),
+            child: Column(
+              children: [
+                const SizedBox(
+                  height: 70,
+                ),
+                Row(
+                  children: [
+                    Icon(
+                      Icons.menu,
+                      color: CustomColors.cardWhiteColor,
+                    ),
+                    const SizedBox(
+                      width: 24,
+                    ),
+                    CategoryCardBuilder()
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ));
   }
 }

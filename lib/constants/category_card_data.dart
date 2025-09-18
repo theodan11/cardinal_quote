@@ -97,8 +97,72 @@ List<CategoryCardModel> categoryList = [
   CategoryCardModel(
       label: "parents", iconPath: "assets/icons/ri_parent-line.png"),
   CategoryCardModel(
-      label: "accomplishment",
-      iconPath: "assets/icons/mdi_achievement-outline.png"),
+    label: "accomplishment",
+    iconPath: "assets/icons/mdi_achievement-outline.png",
+  ),
   CategoryCardModel(
       label: "friends", iconPath: "assets/icons/la_user-friends.png")
+];
+
+List<CategoryCardModel> cardSquareData = [
+  CategoryCardModel(
+    label: "cardinal sounds",
+    iconPath: "assets/icons/Group 55.png",
+  ),
+  CategoryCardModel(
+    label: "wallpaper",
+    iconPath: "assets/icons/Vector (4).png",
+  ),
+  CategoryCardModel(
+    label: "nature sounds",
+    iconPath: "assets/icons/Group 17.png",
+  ),
+  CategoryCardModel(
+    label: "sleeping sounds",
+    iconPath: "assets/icons/Vector (5).png",
+  ),
+  CategoryCardModel(
+    label: "meditation",
+    iconPath: "assets/icons/mdi_meditation.png",
+  ),
+  CategoryCardModel(
+    label: "breathing exercises",
+    iconPath: "assets/icons/Mask group.png",
+  ),
+  CategoryCardModel(
+    label: "short meditations",
+    iconPath: "assets/icons/Group 20.png",
+  ),
+  CategoryCardModel(
+    label: "meditational audios",
+    iconPath: "assets/icons/Mask group (1).png",
+  ),
+  CategoryCardModel(
+    label: "top quotes",
+    iconPath: "assets/icons/Vector (6).png",
+  ),
+  CategoryCardModel(
+    label: "soul check-in",
+    iconPath: "assets/icons/mingcute_user-heart-fill.png",
+  ),
+  CategoryCardModel(
+    label: "Sacred journals",
+    iconPath: "assets/icons/ic_baseline-note.png",
+  ),
+  CategoryCardModel(
+    label: "medicine notes",
+    iconPath: "assets/icons/solar_document-medicine-linear.png",
+  ),
+  CategoryCardModel(
+    label: "memorial cards",
+    iconPath: "assets/icons/material-symbols-light_cards-star-rounded.png",
+  ),
+  CategoryCardModel(
+    label: "save",
+    iconPath: "assets/icons/heroicons-solid_save-as.png",
+  ),
+  CategoryCardModel(
+    label: "cardinal quotes",
+    iconPath: "assets/icons/ri_double-quotes-r.png",
+  ),
 ];

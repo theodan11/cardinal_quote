@@ -9,4 +9,10 @@ class CustomTextTheme {
     fontWeight: FontWeight.w500,
     color: CustomColors.primaryColor,
   );
+
+  static final TextStyle text14med = GoogleFonts.raleway(
+    fontSize: 14,
+    fontWeight: FontWeight.w500,
+    color: CustomColors.primaryColor,
+  );
 }

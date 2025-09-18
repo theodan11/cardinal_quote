@@ -32,6 +32,7 @@ class CategoryCard extends StatelessWidget {
             Text(
               "${categoryItem.label[0].toUpperCase()}${categoryItem.label.substring(1)}",
               style: CustomTextTheme.text15med,
+              softWrap: true,
             ),
           ],
         ),

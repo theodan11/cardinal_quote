@@ -1,3 +1,4 @@
+import 'package:cardinal_quotes/components/custom_list_builder.dart';
 import 'package:cardinal_quotes/components/featured_text_see_all.dart';
 import 'package:cardinal_quotes/components/square_card_builder.dart';
 import 'package:cardinal_quotes/components/top_menu_category.dart';
@@ -30,29 +31,23 @@ class HomePage extends StatelessWidget {
               const SizedBox(
                 height: 14,
               ),
-              Padding(
-                  padding: EdgeInsets.only(left: 35),
-                  child: SizedBox(
-                    height: 132,
-                    child: ListView.separated(
-                        separatorBuilder: (context, index) {
-                          return const SizedBox(
-                            width: 15,
-                          );
-                        },
-                        itemCount: ImageList.wallpaper.length,
-                        itemBuilder: (context, index) {
-                          final String imageItem = ImageList.wallpaper[index];
-                          return Container(
-                            width: 132,
-                            height: 132,
-                            decoration: BoxDecoration(
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(10))),
-                            child: Image.asset(imageItem),
-                          );
-                        }),
-                  )),
+              CustomListBuilder(imageCList: ImageList.wallpaper),
+              const SizedBox(
+                height: 56,
+              ),
+              FeaturedTextSeeAll(label: "Featured Quote", func: () {}),
+              const SizedBox(
+                height: 14,
+              ),
+              CustomListBuilder(imageCList: ImageList.quote),
+              const SizedBox(
+                height: 56,
+              ),
+              FeaturedTextSeeAll(label: "Featured Memory", func: () {}),
+              const SizedBox(
+                height: 14,
+              ),
+              CustomListBuilder(imageCList: ImageList.memCard),
             ],
           ),
         ));

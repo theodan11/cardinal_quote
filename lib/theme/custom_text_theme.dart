@@ -15,4 +15,10 @@ class CustomTextTheme {
     fontWeight: FontWeight.w500,
     color: CustomColors.primaryColor,
   );
+
+  static final TextStyle text16med = GoogleFonts.raleway(
+    fontSize: 16,
+    fontWeight: FontWeight.w500,
+    color: CustomColors.cardWhiteColor,
+  );
 }

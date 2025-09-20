@@ -18,6 +18,7 @@ class _SoundSinglePageState extends State<SoundSinglePage> {
   double musicValue = 14;
   double volumeValue = 20;
   bool isVol = false;
+  bool isPlaying = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -71,24 +72,45 @@ class _SoundSinglePageState extends State<SoundSinglePage> {
                         // height: 60,
                         left: (MediaQuery.of(context).size.width - 70) / 2 - 40,
                         child: IconButton(
-                          onPressed: () {},
-                          icon: Icon(
-                            Icons.play_circle_outline_outlined,
-                            size: 60,
-                          ),
+                          onPressed: () {
+                            setState(() {
+                              if (isPlaying) {
+                                isPlaying = false;
+                              } else {
+                                isPlaying = true;
+                              }
+                            });
+                          },
+                          icon: isPlaying
+                              ? Icon(
+                                  Icons.play_circle_outline_outlined,
+                                  size: 60,
+                                )
+                              : Icon(
+                                  Icons.pause_circle_outline_outlined,
+                                  size: 60,
+                                ),
                           color: Colors.white,
                         )),
                     isVol
                         ? Positioned(
                             right: 40,
                             bottom: 140,
-                            child: Text(
-                              volumeValue.toStringAsFixed(0),
-                              style: CustomTextTheme.text16med.copyWith(
-                                  backgroundColor: CustomColors.primaryBgColor,
-                                  color:
-                                      const Color.fromARGB(255, 255, 255, 255),
-                                  fontWeight: FontWeight.bold),
+                            child: Container(
+                              width: 40,
+                              height: 40,
+                              decoration: BoxDecoration(
+                                  color: CustomColors.primaryBgColor,
+                                  borderRadius: BorderRadius.circular(50)),
+                              child: Center(
+                                child: Text(
+                                  volumeValue.toStringAsFixed(0),
+                                  style: CustomTextTheme.text16med.copyWith(
+                                      color: const Color.fromARGB(
+                                          255, 255, 255, 255),
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ),
                             ))
                         : SizedBox(),
                     isVol

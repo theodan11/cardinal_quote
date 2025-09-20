@@ -2,8 +2,8 @@ import 'package:cardinal_quotes/components/custom_list_builder.dart';
 import 'package:cardinal_quotes/components/featured_text_see_all.dart';
 import 'package:cardinal_quotes/components/square_card_builder.dart';
 import 'package:cardinal_quotes/components/top_menu_category.dart';
-import 'package:cardinal_quotes/constants/image_constants.dart';
-import 'package:cardinal_quotes/constants/image_list.dart';
+import 'package:cardinal_quotes/dummyData/image_constants.dart';
+import 'package:cardinal_quotes/dummyData/image_list.dart';
 import 'package:cardinal_quotes/theme/custom_colors.dart';
 import 'package:flutter/material.dart';
 

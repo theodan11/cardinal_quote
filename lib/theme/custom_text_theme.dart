@@ -21,4 +21,16 @@ class CustomTextTheme {
     fontWeight: FontWeight.w500,
     color: CustomColors.cardWhiteColor,
   );
+
+  static final TextStyle text12bold = GoogleFonts.raleway(
+    color: CustomColors.cardWhiteColor,
+    fontSize: 12,
+    fontWeight: FontWeight.bold,
+  );
+
+  static final TextStyle text12med = GoogleFonts.raleway(
+    color: CustomColors.cardWhiteColor,
+    fontSize: 12,
+    fontWeight: FontWeight.w500,
+  );
 }

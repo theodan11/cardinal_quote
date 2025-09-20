@@ -1,4 +1,4 @@
-import 'package:cardinal_quotes/constants/image_constants.dart';
+import 'package:cardinal_quotes/dummyData/image_constants.dart';
 
 class ImageList {
   static final List<String> wallpaper = [

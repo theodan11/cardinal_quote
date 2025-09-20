@@ -7,13 +7,8 @@ import 'package:cardinal_quotes/theme/custom_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:iconify_flutter/iconify_flutter.dart'; // For Iconify Widget
 import 'package:iconify_flutter/icons/bx.dart';
-import 'package:iconify_flutter/icons/iconoir.dart';
-import 'package:iconify_flutter/icons/lucide.dart';
 import 'package:iconify_flutter/icons/material_symbols.dart';
 import 'package:iconify_flutter/icons/mdi.dart';
-import 'package:iconify_flutter/icons/mingcute.dart';
-import 'package:iconify_flutter/icons/tabler.dart';
-import 'package:iconify_flutter/icons/uil.dart';
 
 class NavigatorBottom extends StatefulWidget {
   const NavigatorBottom({super.key});
@@ -39,6 +34,7 @@ class _NavigatorBottomState extends State<NavigatorBottom> {
         // print(value);
         selectedIndex = value;
       });
+      if (selectedIndex == 1) {}
     }
 
     return Scaffold(

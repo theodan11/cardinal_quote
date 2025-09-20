@@ -1,4 +1,4 @@
-import 'package:cardinal_quotes/constants/category_card_model.dart';
+import 'package:cardinal_quotes/dummyData/category_card_model.dart';
 
 List<CategoryCardModel> categoryList = [
   CategoryCardModel(

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:cardinal_quotes/constants/category_card_model.dart';
+import 'package:cardinal_quotes/dummyData/category_card_model.dart';
 import 'package:cardinal_quotes/theme/custom_colors.dart';
 import 'package:cardinal_quotes/theme/custom_text_theme.dart';
 

@@ -29,14 +29,6 @@ class _NavigatorBottomState extends State<NavigatorBottom> {
       QuotePage(),
     ];
 
-    void Function(int)? onTap(int value) {
-      setState(() {
-        // print(value);
-        selectedIndex = value;
-      });
-      if (selectedIndex == 1) {}
-    }
-
     return Scaffold(
         backgroundColor: CustomColors.primaryBgColor,
         // backgroundColor: const Color.fromARGB(0, 200, 221, 202),
@@ -56,7 +48,12 @@ class _NavigatorBottomState extends State<NavigatorBottom> {
             selectedItemColor: CustomColors.primaryColor,
             selectedLabelStyle: TextStyle(fontWeight: FontWeight.bold),
 
-            onTap: onTap,
+            onTap: (value) {
+              setState(() {
+                // print(value);
+                selectedIndex = value;
+              });
+            },
             selectedIconTheme: IconThemeData(
               // fill: 19,
               color: Colors.amber,

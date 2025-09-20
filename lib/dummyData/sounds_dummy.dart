@@ -8,19 +8,19 @@ List<SoundModel> sounds = [
     views: "567.64k",
   ),
   SoundModel(
-    name: "Wiper",
+    name: "Viper",
     imagePath: "assets/images/1.jpg",
     hashTags: ["Ambition", "Inspiration", "Motivational"],
     views: "567.64k",
   ),
   SoundModel(
-    name: "Wiper",
+    name: "Sage",
     imagePath: "assets/images/2.jpg",
     hashTags: ["Ambition", "Inspiration", "Motivational"],
     views: "567.64k",
   ),
   SoundModel(
-    name: "Wiper",
+    name: "Brim",
     imagePath: "assets/images/3.jpg",
     hashTags: ["Ambition", "Inspiration", "Motivational"],
     views: "567.64k",

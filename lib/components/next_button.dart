@@ -2,11 +2,9 @@ import 'package:cardinal_quotes/theme/custom_colors.dart';
 import 'package:cardinal_quotes/theme/custom_text_theme.dart';
 import 'package:flutter/material.dart';
 
-class AuthButton extends StatelessWidget {
-  final bool isSignUp;
-  final String buttonText;
-  const AuthButton(
-      {super.key, required this.isSignUp, required this.buttonText});
+class NextButton extends StatelessWidget {
+  final bool canSave;
+  const NextButton({super.key, required this.canSave});
 
   @override
   Widget build(BuildContext context) {
@@ -14,17 +12,17 @@ class AuthButton extends StatelessWidget {
       height: 35,
       width: 100,
       decoration: BoxDecoration(
-        border: Border.all(color: CustomColors.primaryColor),
-        color: isSignUp ? CustomColors.btnColor : Colors.transparent,
+        // border: Border.all(color: CustomColors.primaryColor),
+        color: canSave ? CustomColors.primaryColor : CustomColors.btnDisColor,
         borderRadius: BorderRadius.circular(10),
       ),
       child: Center(
         child: Text(
-          buttonText,
-          style: isSignUp
+          "Next",
+          style: canSave
               ? CustomTextTheme.text16med
               : CustomTextTheme.text16med
-                  .copyWith(color: CustomColors.btnColor),
+                  .copyWith(color: CustomColors.cardWhiteColor),
         ),
       ),
     );

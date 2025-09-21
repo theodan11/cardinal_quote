@@ -3,14 +3,19 @@ import 'package:cardinal_quotes/theme/custom_text_theme.dart';
 import 'package:flutter/material.dart';
 
 class CustomTextField extends StatelessWidget {
+  final TextEditingController tecontroller;
   final String hintText;
   final bool isPassword;
   const CustomTextField(
-      {super.key, required this.hintText, this.isPassword = false});
+      {super.key,
+      required this.hintText,
+      this.isPassword = false,
+      required this.tecontroller});
 
   @override
   Widget build(BuildContext context) {
     return TextField(
+      controller: tecontroller,
       obscureText: isPassword,
       decoration: InputDecoration(
         hintText: hintText,

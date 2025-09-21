@@ -5,8 +5,8 @@ class QuotePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text("Quote"),
+    return Scaffold(
+      appBar: AppBar(title: Text("Top Quotes")),
     );
   }
 }

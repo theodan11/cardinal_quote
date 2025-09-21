@@ -116,7 +116,7 @@ class _NavigatorBottomState extends State<NavigatorBottom> {
                           Mdi.more_vert,
                           color: CustomColors.primaryColor,
                         ),
-                  label: "settings"),
+                  label: "More"),
             ],
           ),
         ));

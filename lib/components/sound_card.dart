@@ -1,11 +1,7 @@
 import 'package:cardinal_quotes/components/sound_bottom_bar.dart';
 import 'package:cardinal_quotes/dummyData/sound_model.dart';
 import 'package:cardinal_quotes/pages/sounds/sound_single_page.dart';
-import 'package:cardinal_quotes/theme/custom_colors.dart';
-import 'package:cardinal_quotes/theme/custom_text_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:iconify_flutter/iconify_flutter.dart';
-import 'package:iconify_flutter/icons/mdi.dart';
 
 class SoundCard extends StatelessWidget {
   final SoundModel soundData;

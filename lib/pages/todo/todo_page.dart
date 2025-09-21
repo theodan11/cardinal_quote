@@ -1,3 +1,4 @@
+import 'package:cardinal_quotes/components/todo_card.dart';
 import 'package:cardinal_quotes/theme/custom_colors.dart';
 import 'package:cardinal_quotes/theme/custom_text_theme.dart';
 import 'package:flutter/material.dart';
@@ -51,7 +52,6 @@ class TodoPage extends StatelessWidget {
         height: MediaQuery.of(context).size.height,
         child: Stack(
           children: [
-            Text("hello"),
             Positioned(
                 bottom: 0,
                 left: 0,
@@ -60,6 +60,19 @@ class TodoPage extends StatelessWidget {
                 bottom: 0,
                 left: 120,
                 child: Image.asset('assets/images/todo_bird_right.png')),
+            Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 35.0, vertical: 17),
+                child: ListView.separated(
+                    itemBuilder: (context, index) {
+                      return TodoCard();
+                    },
+                    separatorBuilder: (context, index) {
+                      return const SizedBox(
+                        height: 4,
+                      );
+                    },
+                    itemCount: 6)),
           ],
         ),
       )),
@@ -95,10 +108,15 @@ class TodoPage extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
-                        "Cancel",
-                        style: CustomTextTheme.text16med
-                            .copyWith(color: CustomColors.primaryColor),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.of(context).pop();
+                        },
+                        child: Text(
+                          "Cancel",
+                          style: CustomTextTheme.text16med
+                              .copyWith(color: CustomColors.primaryColor),
+                        ),
                       ),
                       Text(
                         "New To-does",
@@ -108,8 +126,9 @@ class TodoPage extends StatelessWidget {
                       ),
                       Text(
                         "Next",
-                        style: CustomTextTheme.text16med
-                            .copyWith(color: CustomColors.primaryColor),
+                        style: CustomTextTheme.text16med.copyWith(
+                            color: CustomColors.primaryColor,
+                            fontWeight: FontWeight.bold),
                       ),
                     ],
                   ),

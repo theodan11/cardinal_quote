@@ -1,6 +1,7 @@
 import 'package:cardinal_quotes/components/auth_button.dart';
 import 'package:cardinal_quotes/components/custom_text_field.dart';
 import 'package:cardinal_quotes/components/next_button.dart';
+import 'package:cardinal_quotes/theme/custom_colors.dart';
 import 'package:flutter/material.dart';
 
 class AuthPage extends StatefulWidget {
@@ -13,15 +14,32 @@ class AuthPage extends StatefulWidget {
 }
 
 class _AuthPageState extends State<AuthPage> {
+  TextEditingController usernameTE = TextEditingController();
+  TextEditingController createPasswordTE = TextEditingController();
+  TextEditingController passwordTE = TextEditingController();
+  TextEditingController confirmPasswordTE = TextEditingController();
+  TextEditingController emailTE = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    TextEditingController usernameTE = TextEditingController();
-    TextEditingController createPasswordTE = TextEditingController();
-    TextEditingController passwordTE = TextEditingController();
-    TextEditingController confirmPasswordTE = TextEditingController();
-    TextEditingController emailTE = TextEditingController();
+    if (usernameTE.text.isNotEmpty &&
+        createPasswordTE.text.isNotEmpty &&
+        confirmPasswordTE.text.isNotEmpty &&
+        emailTE.text.isNotEmpty &&
+        createPasswordTE.text == confirmPasswordTE.text) {
+      setState(() {
+        widget.canSave = true;
+      });
+    } else {
+      widget.canSave = false;
+    }
 
+    if (emailTE.text.isNotEmpty && passwordTE.text.isNotEmpty) {
+      widget.canSave = true;
+    } else {
+      widget.canSave = false;
+    }
     return Scaffold(
+      backgroundColor: CustomColors.cardWhiteColor,
       body: SafeArea(
         child: SizedBox(
           width: MediaQuery.of(context).size.width,
@@ -104,30 +122,31 @@ class _AuthPageState extends State<AuthPage> {
     );
   }
 
-  Widget _signUpForm(TextEditingController user, pass, confirm, email) {
+  Widget _signUpForm(TextEditingController userTE, TextEditingController passTE,
+      TextEditingController confirmTE, TextEditingController emailTE) {
     return Column(
       children: [
-        CustomTextField(hintText: "Enter your username", tecontroller: user),
+        CustomTextField(hintText: "Enter your username", tecontroller: userTE),
         SizedBox(
           height: 22,
         ),
         CustomTextField(
           hintText: "Create A Password",
-          tecontroller: pass,
+          tecontroller: passTE,
         ),
         SizedBox(
           height: 22,
         ),
         CustomTextField(
           hintText: "Confirm Password",
-          tecontroller: confirm,
+          tecontroller: confirmTE,
         ),
         SizedBox(
           height: 22,
         ),
         CustomTextField(
           hintText: "Enter your email address",
-          tecontroller: email,
+          tecontroller: emailTE,
         ),
         SizedBox(
           height: 22,

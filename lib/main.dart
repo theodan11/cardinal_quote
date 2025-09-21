@@ -1,3 +1,4 @@
+import 'package:cardinal_quotes/pages/auth/auth_page.dart';
 import 'package:cardinal_quotes/pages/home/home_page.dart';
 import 'package:cardinal_quotes/pages/navigator/navigator_bot.dart';
 import 'package:cardinal_quotes/pages/todo/todo_page.dart';
@@ -20,7 +21,8 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const TodoPage(),
+      // home: const TodoPage(),
+      home: AuthPage(),
       // home: const NavigatorBottom(),
     );
   }

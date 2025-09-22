@@ -1,8 +1,10 @@
+import 'package:cardinal_quotes/components/custom_floating_action_button.dart';
+import 'package:cardinal_quotes/components/journal_card.dart';
+import 'package:cardinal_quotes/dummyData/journal_dummy_list.dart';
+import 'package:cardinal_quotes/dummyData/journal_model.dart';
 import 'package:cardinal_quotes/theme/custom_colors.dart';
 import 'package:cardinal_quotes/theme/custom_text_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:iconify_flutter/iconify_flutter.dart';
-import 'package:iconify_flutter/icons/mdi.dart';
 
 class JournalPage extends StatelessWidget {
   const JournalPage({super.key});
@@ -11,111 +13,52 @@ class JournalPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: CustomColors.cardWhiteColor,
+        title: Text("Sacred Journals"),
+        foregroundColor: CustomColors.cardWhiteColor,
+        backgroundColor: CustomColors.primaryBgColor,
         actions: [
           Container(
-              width: 30,
-              height: 30,
-              decoration: BoxDecoration(
-                  color: CustomColors.primaryColor,
-                  borderRadius: BorderRadius.all(Radius.circular(8))),
-              child: Icon(Icons.menu, color: CustomColors.cardWhiteColor)),
+            width: 30,
+            height: 30,
+            decoration: BoxDecoration(
+                color: CustomColors.cardWhiteColor,
+                borderRadius: BorderRadius.circular(10)),
+            child: Icon(Icons.search, color: CustomColors.primaryColor),
+          ),
           SizedBox(
-            width: 24,
+            width: 35,
           )
         ],
       ),
-      backgroundColor: CustomColors.cardWhiteColor,
-      body: SafeArea(
-        child: Stack(
-          children: [
-            Positioned(
-              top: 0,
-              left: 0,
-              child: Image.asset(
-                'assets/images/journal_1_top.png',
-              ),
-            ),
-            Positioned(
-              bottom: 0,
-              right: 0,
-              child: Image.asset(
-                'assets/images/journal_1_bot.png',
-              ),
-            ),
-            SingleChildScrollView(
+      backgroundColor: CustomColors.primaryBgColor,
+      floatingActionButton: CustomFloatingActionButton(
+        onPressFunc: () {
+          Navigator.of(context).pushNamed('/journal-create');
+        },
+      ),
+      body: SingleChildScrollView(
+        child: SafeArea(
+          child: Padding(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 35.0, vertical: 20),
               child: SizedBox(
-                height: MediaQuery.of(context).size.height,
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 35.0),
-                  child: Column(
-                    children: [
-                      TextField(
-                        decoration: InputDecoration(
-                          hintText: "Title",
-                          hintStyle: CustomTextTheme.text18bold,
-                          focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide.none,
-                          ),
-                          enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide.none,
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        height: 15,
-                      ),
-                      TextField(
-                        maxLines: 8,
-                        decoration: InputDecoration(
-                          hintText: "Note",
-                          hintStyle: CustomTextTheme.text14med,
-                          focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide.none,
-                          ),
-                          enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide.none,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-            Positioned(
-              left: 35,
-              bottom: 28,
-              child: Container(
-                width: MediaQuery.of(context).size.width - 70,
-                height: 75,
-                decoration: BoxDecoration(
-                    color: CustomColors.primaryColor,
-                    borderRadius: BorderRadius.circular(52)),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Iconify(
-                      Mdi.camera,
-                      color: CustomColors.cardWhiteColor,
-                    ),
-                    Iconify(
-                      Mdi.pen,
-                      color: CustomColors.cardWhiteColor,
-                    ),
-                    Iconify(
-                      Mdi.attach_file,
-                      color: CustomColors.cardWhiteColor,
-                    ),
-                    Iconify(
-                      Mdi.menu,
-                      color: CustomColors.cardWhiteColor,
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ],
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height - 180,
+                child: ListView.separated(
+                    itemBuilder: (context, index) {
+                      JournalModel journalSingle = journals[index];
+                      return JournalCard(
+                          title: journalSingle.title,
+                          journalBody: journalSingle.journalBody,
+                          colorBody: journalSingle.colorBody);
+                    },
+                    separatorBuilder: (context, index) {
+                      return const SizedBox(
+                        height: 18,
+                      );
+                    },
+                    itemCount: journals.length),
+              )),
         ),
       ),
     );

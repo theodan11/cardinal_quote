@@ -1,4 +1,5 @@
 import 'package:cardinal_quotes/pages/auth/auth_page.dart';
+import 'package:cardinal_quotes/pages/journal_page/journal_create_page.dart';
 import 'package:cardinal_quotes/pages/journal_page/journal_page.dart';
 import 'package:cardinal_quotes/pages/navigator/navigator_bot.dart';
 import 'package:cardinal_quotes/pages/todo/todo_page.dart';
@@ -26,6 +27,7 @@ class MyApp extends StatelessWidget {
         '/auth': (context) => AuthPage(),
         '/todos': (context) => TodoPage(),
         '/journal': (context) => JournalPage(),
+        '/journal-create': (context) => JournalCreatePage(),
       },
 
       // initialRoute: NavigatorBottom(),

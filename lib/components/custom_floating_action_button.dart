@@ -2,7 +2,7 @@ import 'package:cardinal_quotes/theme/custom_colors.dart';
 import 'package:flutter/material.dart';
 
 class CustomFloatingActionButton extends StatelessWidget {
-  final Function onPressFunc;
+  final VoidCallback? onPressFunc;
   const CustomFloatingActionButton({super.key, required this.onPressFunc});
 
   @override
@@ -14,10 +14,7 @@ class CustomFloatingActionButton extends StatelessWidget {
       width: 56,
       height: 56,
       child: IconButton(
-        onPressed: () {
-          // showBottomSheet(context);
-          onPressFunc;
-        },
+        onPressed: onPressFunc,
         icon: Icon(
           Icons.add_to_photos_rounded,
           color: CustomColors.primaryColor,

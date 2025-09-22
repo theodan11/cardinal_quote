@@ -165,6 +165,7 @@ class SoulPage extends StatelessWidget {
                     height: 16,
                   ),
                   Container(
+                    height: 142,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(8),
                       color: const Color.fromARGB(255, 230, 219, 219),

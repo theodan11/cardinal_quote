@@ -258,7 +258,7 @@ List<CategoryCardModel> cardSquareData = [
   CategoryCardModel(
     label: "wallpaper",
     iconPath: "assets/icons/Vector (4).png",
-    route: '/',
+    route: '/wallpapers',
   ),
   CategoryCardModel(
     label: "nature sounds",

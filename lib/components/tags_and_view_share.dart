@@ -1,3 +1,4 @@
+import 'package:cardinal_quotes/components/hash_tags_builder.dart';
 import 'package:cardinal_quotes/theme/custom_colors.dart';
 import 'package:cardinal_quotes/theme/custom_text_theme.dart';
 import 'package:flutter/material.dart';
@@ -12,26 +13,27 @@ class TagsAndViewShare extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SizedBox(
-          height: 14,
-          child: ListView.separated(
-            scrollDirection: Axis.horizontal,
-            itemCount: hastTags.length,
-            separatorBuilder: (context, index) {
-              return SizedBox(
-                width: 4,
-              );
-            },
-            itemBuilder: (context, index) {
-              String singleHashTag = hastTags[index];
-              // print(singleHashTag);
-              return Text(
-                "#$singleHashTag",
-                style: CustomTextTheme.text12med,
-              );
-            },
-          ),
-        ),
+        HashTagsBuilder(hashTags: hastTags),
+        // SizedBox(
+        //   height: 14,
+        //   child: ListView.separated(
+        //     scrollDirection: Axis.horizontal,
+        //     itemCount: hastTags.length,
+        //     separatorBuilder: (context, index) {
+        //       return SizedBox(
+        //         width: 4,
+        //       );
+        //     },
+        //     itemBuilder: (context, index) {
+        //       String singleHashTag = hastTags[index];
+        //       // print(singleHashTag);
+        //       return Text(
+        //         "#$singleHashTag",
+        //         style: CustomTextTheme.text12med,
+        //       );
+        //     },
+        //   ),
+        // ),
         SizedBox(
           height: 5,
         ),

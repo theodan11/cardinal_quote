@@ -6,11 +6,11 @@ List<CategoryCardModel> categoryList = [
     iconPath: "assets/icons/material-symbols_explore-outline.png",
     route: '/',
   ),
-  CategoryCardModel(
-    label: "to-dos",
-    iconPath: "assets/icons/new.png",
-    route: '/todos',
-  ),
+  // CategoryCardModel(
+  //   label: "to-dos",
+  //   iconPath: "assets/icons/new.png",
+  //   route: '/todos',
+  // ),
   CategoryCardModel(
     label: "latest",
     iconPath: "assets/icons/new.png",
@@ -308,12 +308,12 @@ List<CategoryCardModel> cardSquareData = [
   CategoryCardModel(
     label: "medicine notes",
     iconPath: "assets/icons/solar_document-medicine-linear.png",
-    route: '/',
+    route: '/todos',
   ),
   CategoryCardModel(
     label: "memorial cards",
     iconPath: "assets/icons/material-symbols-light_cards-star-rounded.png",
-    route: '/',
+    route: '/memorial-card',
   ),
   CategoryCardModel(
     label: "save",

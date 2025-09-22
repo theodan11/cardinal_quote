@@ -1,13 +1,9 @@
 import 'package:cardinal_quotes/components/hash_tags_builder.dart';
 import 'package:cardinal_quotes/components/wallpaper_pop_option.dart';
-import 'package:cardinal_quotes/dummyData/sound_model.dart';
-import 'package:cardinal_quotes/dummyData/sounds_dummy.dart';
 import 'package:cardinal_quotes/dummyData/wallpaper_list.dart';
 import 'package:cardinal_quotes/dummyData/wallpaper_model.dart';
 import 'package:cardinal_quotes/theme/custom_colors.dart';
-import 'package:cardinal_quotes/theme/custom_text_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:iconify_flutter/iconify_flutter.dart';
 import 'package:iconify_flutter/icons/mdi.dart';
 
 class WallpaperPage extends StatelessWidget {

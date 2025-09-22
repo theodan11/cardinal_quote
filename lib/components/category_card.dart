@@ -16,25 +16,31 @@ class CategoryCard extends StatelessWidget {
         borderRadius: BorderRadius.all(Radius.circular(15)),
         color: CustomColors.cardWhiteColor,
       ),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 14.0),
-        child: Row(
-          children: [
-            Image.asset(
-              categoryItem.iconPath,
-              width: 24,
-              height: 24,
-              fit: BoxFit.cover,
-            ),
-            const SizedBox(
-              width: 4,
-            ),
-            Text(
-              "${categoryItem.label[0].toUpperCase()}${categoryItem.label.substring(1)}",
-              style: CustomTextTheme.text15med,
-              softWrap: true,
-            ),
-          ],
+      child: GestureDetector(
+        onTap: () {
+          Navigator.of(context).pop();
+          Navigator.of(context).pushNamed(categoryItem.route);
+        },
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 14.0),
+          child: Row(
+            children: [
+              Image.asset(
+                categoryItem.iconPath,
+                width: 24,
+                height: 24,
+                fit: BoxFit.cover,
+              ),
+              const SizedBox(
+                width: 4,
+              ),
+              Text(
+                "${categoryItem.label[0].toUpperCase()}${categoryItem.label.substring(1)}",
+                style: CustomTextTheme.text15med,
+                softWrap: true,
+              ),
+            ],
+          ),
         ),
       ),
     );

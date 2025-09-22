@@ -32,6 +32,7 @@ class _NavigatorBottomState extends State<NavigatorBottom> {
     return Scaffold(
         backgroundColor: CustomColors.primaryBgColor,
         // backgroundColor: const Color.fromARGB(0, 200, 221, 202),
+
         body: pages[selectedIndex],
         bottomNavigationBar: ClipRRect(
           borderRadius: const BorderRadius.only(

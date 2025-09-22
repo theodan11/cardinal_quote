@@ -1,5 +1,5 @@
 import 'package:cardinal_quotes/pages/auth/auth_page.dart';
-import 'package:cardinal_quotes/pages/home/home_page.dart';
+import 'package:cardinal_quotes/pages/journal_page/journal_page.dart';
 import 'package:cardinal_quotes/pages/navigator/navigator_bot.dart';
 import 'package:cardinal_quotes/pages/todo/todo_page.dart';
 import 'package:flutter/material.dart';
@@ -21,9 +21,17 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
+      routes: {
+        // '/home': (context)=>HomePage(),
+        '/auth': (context) => AuthPage(),
+        '/todos': (context) => TodoPage(),
+        '/journal': (context) => JournalPage(),
+      },
+
+      // initialRoute: NavigatorBottom(),
       // home: const TodoPage(),
-      home: AuthPage(),
-      // home: const NavigatorBottom(),
+      // home: AuthPage(),
+      home: const NavigatorBottom(),
     );
   }
 }

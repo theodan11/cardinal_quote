@@ -5,10 +5,7 @@ import 'package:cardinal_quotes/theme/custom_colors.dart';
 import 'package:flutter/material.dart';
 
 class AuthPage extends StatefulWidget {
-  AuthPage({super.key});
-  bool isSignUp = true;
-  bool isLogin = false;
-  bool canSave = false;
+  const AuthPage({super.key});
   @override
   State<AuthPage> createState() => _AuthPageState();
 }
@@ -19,6 +16,10 @@ class _AuthPageState extends State<AuthPage> {
   TextEditingController passwordTE = TextEditingController();
   TextEditingController confirmPasswordTE = TextEditingController();
   TextEditingController emailTE = TextEditingController();
+
+  bool isSignUp = true;
+  bool isLogin = false;
+  bool canSave = false;
   @override
   Widget build(BuildContext context) {
     if (usernameTE.text.isNotEmpty &&
@@ -27,16 +28,16 @@ class _AuthPageState extends State<AuthPage> {
         emailTE.text.isNotEmpty &&
         createPasswordTE.text == confirmPasswordTE.text) {
       setState(() {
-        widget.canSave = true;
+        canSave = true;
       });
     } else {
-      widget.canSave = false;
+      canSave = false;
     }
 
     if (emailTE.text.isNotEmpty && passwordTE.text.isNotEmpty) {
-      widget.canSave = true;
+      canSave = true;
     } else {
-      widget.canSave = false;
+      canSave = false;
     }
     return Scaffold(
       backgroundColor: CustomColors.cardWhiteColor,
@@ -77,13 +78,13 @@ class _AuthPageState extends State<AuthPage> {
                           GestureDetector(
                             onTap: () {
                               setState(() {
-                                widget.isSignUp = true;
-                                widget.isLogin = false;
+                                isSignUp = true;
+                                isLogin = false;
                               });
                             },
                             child: AuthButton(
                               buttonText: "Sign Up",
-                              isSignUp: widget.isSignUp,
+                              isSignUp: isSignUp,
                             ),
                           ),
                           SizedBox(
@@ -92,13 +93,13 @@ class _AuthPageState extends State<AuthPage> {
                           GestureDetector(
                             onTap: () {
                               setState(() {
-                                widget.isSignUp = false;
-                                widget.isLogin = true;
+                                isSignUp = false;
+                                isLogin = true;
                               });
                             },
                             child: AuthButton(
                               buttonText: "Log In",
-                              isSignUp: widget.isLogin,
+                              isSignUp: isLogin,
                             ),
                           ),
                         ],
@@ -106,11 +107,11 @@ class _AuthPageState extends State<AuthPage> {
                       SizedBox(
                         height: 40,
                       ),
-                      widget.isSignUp
+                      isSignUp
                           ? _signUpForm(usernameTE, createPasswordTE,
                               confirmPasswordTE, emailTE)
                           : _logInForm(emailTE, passwordTE),
-                      NextButton(canSave: widget.canSave)
+                      NextButton(canSave: canSave)
                     ],
                   ),
                 ),

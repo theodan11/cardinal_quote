@@ -11,11 +11,12 @@ class SquareCardBuilder extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 35.0),
       child: SizedBox(
-        height: 460,
+        height: 530,
         child: GridView.builder(
+            physics: NeverScrollableScrollPhysics(),
             itemCount: cardSquareData.length,
             gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-                maxCrossAxisExtent: 140,
+                maxCrossAxisExtent: 100,
                 crossAxisSpacing: 20,
                 // childAspectRatio: 1.4,
                 mainAxisSpacing: 20),

@@ -9,30 +9,35 @@ class CardSquare extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 100,
-      height: 70,
-      decoration: BoxDecoration(
-        color: CustomColors.cardWhiteColor,
-        borderRadius: BorderRadius.circular(
-          6,
+    return GestureDetector(
+      onTap: () {
+        Navigator.of(context).pushNamed(cardItem.route);
+      },
+      child: Container(
+        width: 70,
+        height: 70,
+        decoration: BoxDecoration(
+          color: CustomColors.cardWhiteColor,
+          borderRadius: BorderRadius.circular(
+            6,
+          ),
         ),
-      ),
-      child: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Image.asset(
-              cardItem.iconPath,
-            ),
-            Text(
-              "${cardItem.label[0].toUpperCase()}${cardItem.label.substring(1)}",
-              style: CustomTextTheme.text14med,
-              textAlign: TextAlign.center,
-              softWrap: true,
-            ),
-          ],
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Image.asset(
+                cardItem.iconPath,
+              ),
+              Text(
+                "${cardItem.label[0].toUpperCase()}${cardItem.label.substring(1)}",
+                style: CustomTextTheme.text14med,
+                textAlign: TextAlign.center,
+                softWrap: true,
+              ),
+            ],
+          ),
         ),
       ),
     );

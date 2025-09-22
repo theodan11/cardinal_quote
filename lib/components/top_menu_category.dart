@@ -60,22 +60,26 @@ class TopMenuCategory extends StatelessWidget {
                             ),
                             Spacer(),
                             GestureDetector(
+                                onTap: () {
+                                  Navigator.of(context).pop();
+                                  Navigator.of(context).pushNamed('/auth');
+                                },
                                 child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(
-                                  "Log Out",
-                                  style: CustomTextTheme.text15med,
-                                ),
-                                SizedBox(
-                                  width: 4,
-                                ),
-                                Iconify(
-                                  Mdi.log_out,
-                                  color: CustomColors.primaryColor,
-                                )
-                              ],
-                            ))
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      "Log Out",
+                                      style: CustomTextTheme.text15med,
+                                    ),
+                                    SizedBox(
+                                      width: 4,
+                                    ),
+                                    Iconify(
+                                      Mdi.log_out,
+                                      color: CustomColors.primaryColor,
+                                    )
+                                  ],
+                                ))
                           ],
                         ),
                         Positioned(

@@ -38,4 +38,10 @@ class CustomTextTheme {
     fontSize: 12,
     fontWeight: FontWeight.w500,
   );
+
+  static final TextStyle text18bold = GoogleFonts.raleway(
+    fontWeight: FontWeight.bold,
+    fontSize: 18,
+    color: CustomColors.primaryColor,
+  );
 }

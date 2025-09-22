@@ -17,22 +17,16 @@ class CustomButton extends StatelessWidget {
         border: isOutline
             ? Border.all(color: CustomColors.primaryColor)
             : Border.all(color: Colors.transparent),
-        // color: canSave ? CustomColors.primaryColor : CustomColors.btnDisColor,
         color: isOutline ? Colors.transparent : CustomColors.primaryColor,
         borderRadius: BorderRadius.circular(10),
       ),
       child: Center(
         child: Text(
           buttonText,
-
           style: isOutline
               ? CustomTextTheme.text16med
                   .copyWith(color: CustomColors.primaryColor)
               : CustomTextTheme.text16med,
-          // style: canSave
-          //     ? CustomTextTheme.text16med
-          //     : CustomTextTheme.text16med
-          //         .copyWith(color: CustomColors.cardWhiteColor),
         ),
       ),
     );

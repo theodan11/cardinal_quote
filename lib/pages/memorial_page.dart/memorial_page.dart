@@ -1,6 +1,5 @@
 import 'package:cardinal_quotes/components/custom_button.dart';
 import 'package:cardinal_quotes/components/custom_text_field.dart';
-import 'package:cardinal_quotes/components/next_button.dart';
 import 'package:cardinal_quotes/components/quote_card.dart';
 import 'package:cardinal_quotes/dummyData/quotes_list.dart';
 import 'package:cardinal_quotes/dummyData/quotes_model.dart';

@@ -3,7 +3,6 @@ import 'package:cardinal_quotes/components/journal_card.dart';
 import 'package:cardinal_quotes/dummyData/journal_dummy_list.dart';
 import 'package:cardinal_quotes/dummyData/journal_model.dart';
 import 'package:cardinal_quotes/theme/custom_colors.dart';
-import 'package:cardinal_quotes/theme/custom_text_theme.dart';
 import 'package:flutter/material.dart';
 
 class JournalPage extends StatelessWidget {

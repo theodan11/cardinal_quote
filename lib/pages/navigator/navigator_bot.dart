@@ -1,5 +1,5 @@
 import 'package:cardinal_quotes/pages/home/home_page.dart';
-import 'package:cardinal_quotes/pages/quote/quote_page.dart';
+import 'package:cardinal_quotes/pages/more_page/more_page.dart';
 import 'package:cardinal_quotes/pages/soul/soul_page.dart';
 import 'package:cardinal_quotes/pages/sounds/sounds_page.dart';
 import 'package:cardinal_quotes/pages/top/top_page.dart';
@@ -26,7 +26,7 @@ class _NavigatorBottomState extends State<NavigatorBottom> {
       SoundsPage(),
       SoulPage(),
       TopPage(),
-      QuotePage(),
+      MorePage(),
     ];
 
     return Scaffold(

@@ -25,8 +25,13 @@ class WallpaperPage extends StatelessWidget {
             height: MediaQuery.of(context).size.height,
             child: GridView.builder(
                 itemCount: wallpaperList.length,
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2, mainAxisSpacing: 8, crossAxisSpacing: 8),
+                gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+                    maxCrossAxisExtent: 170,
+                    crossAxisSpacing: 8,
+                    mainAxisSpacing: 8),
+
+                // gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                //     crossAxisCount: 2, mainAxisSpacing: 8, crossAxisSpacing: 8),
                 itemBuilder: (context, index) {
                   WallpaperModel wallpaper = wallpaperList[index];
 
@@ -37,6 +42,7 @@ class WallpaperPage extends StatelessWidget {
                     child: Column(
                       children: [
                         Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             SizedBox(
                                 width: 110,

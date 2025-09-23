@@ -70,62 +70,71 @@ class MemorialPage extends StatelessWidget {
               width: MediaQuery.of(context).size.width - 70,
               height: 430,
               decoration: BoxDecoration(color: CustomColors.cardWhiteColor),
-              child: Column(
-                children: [
-                  SizedBox(
-                    width: 40,
-                  ),
-                  Container(
-                    width: 252,
-                    height: 142,
-                    decoration: BoxDecoration(
-                        // color: CustomColors.cardWhiteOpaColor,
-                        color: const Color.fromARGB(255, 230, 219, 219),
-                        borderRadius: BorderRadius.circular(10)),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(
-                          Icons.add_circle_outline_rounded,
-                          color: CustomColors.primaryColor,
-                        ),
-                        SizedBox(
-                          width: 8,
-                        ),
-                        Text("Add a photo",
-                            style: CustomTextTheme.text16med
-                                .copyWith(color: CustomColors.primaryColor))
-                      ],
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    SizedBox(
+                      width: 40,
                     ),
-                  ),
-                  SizedBox(
-                    height: 18,
-                  ),
-                  CustomTextField(hintText: "Name", tecontroller: te),
-                  SizedBox(
-                    height: 18,
-                  ),
-                  CustomTextField(hintText: "Date Of Birth", tecontroller: te),
-                  SizedBox(
-                    height: 18,
-                  ),
-                  CustomTextField(hintText: "Date Of Birth", tecontroller: te),
-                  SizedBox(
-                    height: 18,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      CustomButton(
-                        buttonText: "Cancel",
-                        isOutline: true,
+                    Container(
+                      width: 252,
+                      height: 142,
+                      decoration: BoxDecoration(
+                          // color: CustomColors.cardWhiteOpaColor,
+                          color: const Color.fromARGB(255, 230, 219, 219),
+                          borderRadius: BorderRadius.circular(10)),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            Icons.add_circle_outline_rounded,
+                            color: CustomColors.primaryColor,
+                          ),
+                          SizedBox(
+                            width: 8,
+                          ),
+                          Text("Add a photo",
+                              style: CustomTextTheme.text16med
+                                  .copyWith(color: CustomColors.primaryColor))
+                        ],
                       ),
-                      CustomButton(
-                        buttonText: "Continue",
-                      )
-                    ],
-                  )
-                ],
+                    ),
+                    SizedBox(
+                      height: 18,
+                    ),
+                    CustomTextField(hintText: "Name", tecontroller: te),
+                    SizedBox(
+                      height: 18,
+                    ),
+                    CustomTextField(
+                        hintText: "Date Of Birth", tecontroller: te),
+                    SizedBox(
+                      height: 18,
+                    ),
+                    CustomTextField(
+                        hintText: "Date Of Birth", tecontroller: te),
+                    SizedBox(
+                      height: 18,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.of(context).pop();
+                          },
+                          child: CustomButton(
+                            buttonText: "Cancel",
+                            isOutline: true,
+                          ),
+                        ),
+                        CustomButton(
+                          buttonText: "Continue",
+                        )
+                      ],
+                    )
+                  ],
+                ),
               ),
             ),
           );

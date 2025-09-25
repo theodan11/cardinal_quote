@@ -10,21 +10,19 @@ class SquareCardBuilder extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 35.0),
-      child: SizedBox(
-        height: 530,
-        child: GridView.builder(
-            physics: NeverScrollableScrollPhysics(),
-            itemCount: cardSquareData.length,
-            gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-                maxCrossAxisExtent: 100,
-                crossAxisSpacing: 20,
-                childAspectRatio: 0.8,
-                mainAxisSpacing: 20),
-            itemBuilder: (context, index) {
-              CategoryCardModel cardItem = cardSquareData[index];
-              return CardSquare(cardItem: cardItem);
-            }),
-      ),
+      child: GridView.builder(
+          shrinkWrap: true,
+          physics: NeverScrollableScrollPhysics(),
+          itemCount: cardSquareData.length,
+          gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+              maxCrossAxisExtent: 100,
+              crossAxisSpacing: 20,
+              childAspectRatio: 0.8,
+              mainAxisSpacing: 20),
+          itemBuilder: (context, index) {
+            CategoryCardModel cardItem = cardSquareData[index];
+            return CardSquare(cardItem: cardItem);
+          }),
     );
   }
 }

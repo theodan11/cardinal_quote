@@ -15,11 +15,13 @@ class MemorialPage extends StatelessWidget {
     return Scaffold(
         backgroundColor: CustomColors.primaryBgColor,
         appBar: AppBar(
+          foregroundColor: CustomColors.cardWhiteColor,
+          backgroundColor: CustomColors.primaryBgColor,
           title: Text(
             "Memorial Cards",
             style: CustomTextTheme.text16med,
           ),
-          backgroundColor: CustomColors.primaryBgColor,
+          // backgroundColor: CustomColors.primaryBgColor,
         ),
         floatingActionButton: Container(
           decoration: BoxDecoration(

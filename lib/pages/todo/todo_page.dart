@@ -29,23 +29,16 @@ class TodoPage extends StatelessWidget {
         ),
       ),
       appBar: AppBar(
+        foregroundColor: CustomColors.cardWhiteColor,
+        backgroundColor: CustomColors.primaryBgColor,
         title: Row(
           children: [
-            Icon(
-              Icons.arrow_forward_sharp,
-              size: 30,
-              color: CustomColors.cardWhiteColor,
-            ),
-            SizedBox(
-              width: 6,
-            ),
             Text(
               "To-dos",
               style: CustomTextTheme.text16med,
             ),
           ],
         ),
-        backgroundColor: CustomColors.primaryBgColor,
       ),
       body: SafeArea(
           child: SizedBox(

@@ -48,6 +48,7 @@ class SoulPage extends StatelessWidget {
             "Soul Check-in",
             style: CustomTextTheme.text16med,
           ),
+          foregroundColor: CustomColors.cardWhiteColor,
           backgroundColor: CustomColors.primaryBgColor,
         ),
         floatingActionButton: CustomFloatingActionButton(

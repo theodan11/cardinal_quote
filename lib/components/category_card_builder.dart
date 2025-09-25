@@ -10,7 +10,11 @@ class CategoryCardBuilder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: isVert ? MediaQuery.of(context).size.width : 52,
+      height: isVert
+          ? MediaQuery.of(context).size.width <= 400
+              ? MediaQuery.of(context).size.height * 0.5
+              : MediaQuery.of(context).size.height * 0.6
+          : 52,
       width: MediaQuery.of(context).size.width * 0.70,
       child: ListView.separated(
           shrinkWrap: true,

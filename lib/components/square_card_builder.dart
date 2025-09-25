@@ -18,7 +18,7 @@ class SquareCardBuilder extends StatelessWidget {
             gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
                 maxCrossAxisExtent: 100,
                 crossAxisSpacing: 20,
-                // childAspectRatio: 1.4,
+                childAspectRatio: 0.8,
                 mainAxisSpacing: 20),
             itemBuilder: (context, index) {
               CategoryCardModel cardItem = cardSquareData[index];

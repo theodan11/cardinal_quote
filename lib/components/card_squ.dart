@@ -27,14 +27,20 @@ class CardSquare extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Image.asset(
-                cardItem.iconPath,
+              FittedBox(
+                child: Image.asset(
+                  cardItem.iconPath,
+                ),
               ),
               Text(
                 "${cardItem.label[0].toUpperCase()}${cardItem.label.substring(1)}",
-                style: CustomTextTheme.text14med,
+                style: MediaQuery.of(context).size.width == 430
+                    ? CustomTextTheme.text12med.copyWith(height: 1)
+                    : CustomTextTheme.text14med,
+                overflow: TextOverflow.clip,
                 textAlign: TextAlign.center,
                 softWrap: true,
+                maxLines: MediaQuery.of(context).size.width == 430 ? 1 : 2,
               ),
             ],
           ),
